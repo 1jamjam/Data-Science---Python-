@@ -5,3 +5,14 @@ b = np.array([10, 20, 30, 40, 50, 60, 70)]
 b.size
 b.ndim
 b.shape
+
+#Numpy statistical attributes
+#Find the min, max, and perform addition on the array.
+
+a = np.array([-10, 201, 43, 94, 502])
+a_min = a.min()
+a_max = a.max()
+
+Sum = (a_min + a_max)
+Sum
+
