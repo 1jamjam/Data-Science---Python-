@@ -1,0 +1,7 @@
+#Helpful Numpy Attributes
+#Given array b, find size, dimension, and shape.
+
+b = np.array([10, 20, 30, 40, 50, 60, 70)]
+b.size
+b.ndim
+b.shape
