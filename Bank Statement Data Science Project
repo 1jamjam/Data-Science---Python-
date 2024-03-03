@@ -1,0 +1,69 @@
+# I am doing a data science project on my 2023 bank statements, and using here as not only a repository to show off the project, but also a way to backup the code in case something breaks. 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+import seaborn as sns
+plt.style.use('ggplot')
+#pd.set_option('max_columns', 200)
+
+df = pd.read_csv('BofA.csv')
+df.shape #rows, columns
+df.head(17)
+
+#list all columns
+df.columns
+
+#identify datatype
+df.dtypes
+
+#data preparation
+#changing objects into floats
+
+
+df['Entertainment_replace'] = df['Entertainment'].str.replace('$', '').str.replace(',', '')
+df['Entertainment_replace'] = pd.to_numeric(df['Entertainment_replace'])
+df['Entertainment_replace']
+
+df['Merchandise_replace'] = df['Merchandise'].str.replace('$', '').str.replace(',', '')
+df['Merchandise_replace'] = pd.to_numeric(df['Merchandise_replace'])
+df['Merchandise_replace']
+
+df['Travel and\nTransportation_replace'] = df['Travel and\nTransportation'].str.replace('$', '').str.replace(',', '')
+df['Travel and\nTransportation_replace'] = pd.to_numeric(df['Travel and\nTransportation_replace'])
+df['Travel and\nTransportation_replace']
+
+df['Services_replace'] = df['Services'].str.replace('$', '').str.replace(',', '')
+df['Services_replace'] = pd.to_numeric(df['Services_replace'])
+df['Services_replace']
+
+df['Health_replace'] = df['Health'].str.replace('$', '').str.replace(',', '')
+df['Health_replace'] = pd.to_numeric(df['Health_replace'])
+df['Health_replace']
+
+df['Misc'] = df['All Other\nCategories'].str.replace('$', '').str.replace(',', '')
+df['Misc'] = pd.to_numeric(df['Misc'])
+df['Misc']
+
+df['Total_replace'] = df['Total'].str.replace('$', '').str.replace(',', '')
+df['Total_replace'] = pd.to_numeric(df['Total_replace'])
+df['Total_replace']
+
+df.dtypes
+
+#Deleting the old columns 
+
+df[['Column1', 
+   # 'Entertainment', 
+ #   'Merchandise', 
+ #   'Travel and\nTransportation',
+#       'Services', 
+ #   'Health', 'All Other\nCategories', 
+   
+       'Entertainment_replace', 
+    'Merchandise_replace',
+       'Travel and\nTransportation_replace', 
+    'Services_replace',
+       'Health_replace', 
+    'Misc', 'Total_replace']]      
+
