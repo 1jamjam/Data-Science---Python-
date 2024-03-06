@@ -53,7 +53,7 @@ df.dtypes
 
 #Deleting the old columns 
 
-df[['Column1', 
+df = df[['Column1', 
    # 'Entertainment', 
  #   'Merchandise', 
  #   'Travel and\nTransportation',
@@ -65,5 +65,5 @@ df[['Column1',
        'Travel and\nTransportation_replace', 
     'Services_replace',
        'Health_replace', 
-    'Misc', 'Total_replace']]      
+    'Misc', 'Total_replace']].copy()      
 
