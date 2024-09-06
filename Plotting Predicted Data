@@ -4,4 +4,4 @@
 
 predicted_data = np.empty_like(original_data)
 predicted_data[:] = np.nan
-predicted_data[-len(predictions):] = predictions
+predicted_data[-len(predictions):] = predictions.reshape(-1)
