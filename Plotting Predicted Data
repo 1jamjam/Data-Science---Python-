@@ -1,0 +1,7 @@
+#Ease of use code so I dont have to type this out each time im doing  ML project
+# enjoy
+
+
+predicted_data = np.empty_like(original_data)
+predicted_data[:] = np.nan
+predicted_data[-len(predictions):] = predictions
