@@ -1,0 +1,10 @@
+# Dont want to rewrite this code every time I do a machine learning project that requires prediction so im keeping it here
+# Enjoy 
+
+def create_dataset(data, timestep):
+    X, y = [], []
+    for i in range(len(data) - timestep - 1):
+        X.append(data[i:(i + time_step), 0])
+        y.append(data[i + time_step, 0])
+
+    return np.array(X), np.array(y)
