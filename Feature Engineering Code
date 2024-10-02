@@ -1,0 +1,17 @@
+#Useful Feature Engineering Code and Commands 
+#Enjoy
+
+# creating a dataframe that groups the rows by date, and making the TOTAL SUM for each Day. 
+df_name = df.groupby('Date').agg({'Profit': 'sum'}) 
+
+# creating a Moving Average (TimeSeries Predictions)
+df_name['moving_avg'] = daily_df['Profit'].rolling(window=3).mean()
+
+# Creating Binned Labels 
+bins = [0, 50,150,280]
+labels = [1,2,3]
+df_name['binned_values'] = pd.cut(daily_df['Profit'], bins=bins, labels=labels, right=False)
+
+#Creating Lag Periods
+df_name['Profit_lag_1'] = daily_df['Profit'].shift(periods=1)
+
