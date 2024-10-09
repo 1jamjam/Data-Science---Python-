@@ -64,3 +64,8 @@ future = model.make_future_dataframe(periods = 365, include_history = False)
 forecast = model.predict(future)
 
 forecast
+
+#export forecast as csv.
+
+forecast.to_csv('forecast.csv', index=False)
+
