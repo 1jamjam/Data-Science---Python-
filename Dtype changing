@@ -1,0 +1,7 @@
+# Rename specific columns
+df = df.rename(columns={'old_name1': 'new_name1', 'old_name2': 'new_name2'})
+
+# Convert column from object (string) to datetime
+df['date_column'] = pd.to_datetime(df['date_column'])
+
+df['numeric_column'] = df['numeric_column'].astype(float)
